@@ -6,12 +6,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:gravity="center"
+    android:padding="20dp"
+    android:background="#F5F5F5"
     tools:context=".MainActivity">
 
    <TextView
-       android:layout_width="match_parent"
+       android:layout_width="wrap_content"
        android:layout_height="wrap_content"
-       android:text="dasdjsakdjklsajklajdjsadjksajdklaskdljsakd"/>
-
+       android:text="欢迎来到主页面！"
+       android:textSize="24sp"
+       android:textColor="#333333"
+       android:textStyle="bold"
+       android:layout_marginBottom="20dp"/>
+   
+   <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="这里是应用程序的主要功能界面"
+       android:textSize="16sp"
+       android:textColor="#666666"
+       android:gravity="center"/>
 
 </LinearLayout>
