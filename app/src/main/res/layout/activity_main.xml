@@ -11,34 +11,8 @@
     android:background="#F5F5F5"
     tools:context=".MainActivity">
 
-<<<<<<< HEAD
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="DIYIASHHALFALKJKLJKLKJLKJLKLKLASDAASD!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="sdfds士大夫撒旦的KLKJLKJLKLKLASDAASD!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="DIYIASHHALFAL韩国代购风格恢复KJKLJKLKJLKJLKLKLASDAASD!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-=======
    <TextView
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
@@ -55,6 +29,6 @@
        android:textSize="16sp"
        android:textColor="#666666"
        android:gravity="center"/>
->>>>>>> tang03
+
 
 </LinearLayout>
