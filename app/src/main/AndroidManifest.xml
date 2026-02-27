@@ -12,18 +12,27 @@
         android:supportsRtl="true"
         android:theme="@style/Theme._2307A1"
         tools:targetApi="31">
+        <!-- 欢迎页Activity -->
         <activity
+<<<<<<< HEAD
             android:name=".MainActivity2"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
+=======
+            android:name=".WelcomeActivity"
+>>>>>>> tang03
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
+        <!-- 主页面Activity -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
     </application>
 
 </manifest>
