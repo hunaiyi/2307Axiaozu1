@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/publish_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F5F5F5">
+
+    <!-- 顶部标题栏 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:background="#FFFFFF"
+        android:gravity="center_vertical">
+
+        <ImageButton
+            android:id="@+id/btn_cancel"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@android:drawable/ic_menu_close_clear_cancel"
+            android:contentDescription="取消" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="发布内容"
+            android:textSize="18sp"
+            android:textColor="#333333"
+            android:textStyle="bold"
+            android:gravity="center" />
+
+        <Button
+            android:id="@+id/btn_publish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="发布"
+            android:textSize="14sp"
+            android:backgroundTint="#007AFF" />
+    </LinearLayout>
+
+    <!-- 内容输入区域 -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- 文本输入框 -->
+            <EditText
+                android:id="@+id/et_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="分享你的想法..."
+                android:background="#FFFFFF"
+                android:padding="16dp"
+                android:minHeight="150dp"
+                android:gravity="top"
+                android:inputType="textMultiLine"
+                android:textSize="16sp"
+                android:textColor="#333333" />
+
+            <!-- 图片预览区域 -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_images"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:visibility="gone" />
+
+            <!-- 添加图片按钮 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="16dp">
+
+                <Button
+                    android:id="@+id/btn_add_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="添加图片"
+                    android:backgroundTint="#E0E0E0"
+                    android:textColor="#333333"
+                    android:drawableStart="@android:drawable/ic_menu_gallery"
+                    android:drawablePadding="8dp" />
+
+                <Button
+                    android:id="@+id/btn_add_video"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="添加视频"
+                    android:backgroundTint="#E0E0E0"
+                    android:textColor="#333333"
+                    android:drawableStart="@android:drawable/ic_menu_camera"
+                    android:drawablePadding="8dp"
+                    android:layout_marginStart="8dp" />
+            </LinearLayout>
+
+            <!-- 话题标签 -->
+            <EditText
+                android:id="@+id/et_hashtag"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="添加话题 ##"
+                android:background="#FFFFFF"
+                android:padding="12dp"
+                android:layout_marginTop="16dp"
+                android:inputType="text"
+                android:textSize="14sp"
+                android:textColor="#333333" />
+
+            <!-- 位置信息 -->
+            <LinearLayout
+                android:id="@+id/layout_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="#FFFFFF"
+                android:padding="12dp"
+                android:layout_marginTop="8dp"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@android:drawable/ic_dialog_map"
+                    android:contentDescription="位置" />
+
+                <TextView
+                    android:id="@+id/tv_location"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="添加位置"
+                    android:textSize="14sp"
+                    android:textColor="#666666"
+                    android:layout_marginStart="8dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

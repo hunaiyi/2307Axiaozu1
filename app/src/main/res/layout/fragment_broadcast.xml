@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFF">
+
+    <!-- 顶部标题栏 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        android:background="#FFFFFF"
+        android:gravity="center_vertical">
+
+        <!-- 日历图标 -->
+        <ImageButton
+            android:id="@+id/btn_calendar"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@android:drawable/ic_menu_my_calendar"
+            android:contentDescription="日历"
+            android:padding="8dp" />
+
+        <!-- TabLayout -->
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            app:tabIndicatorColor="#FF6B00"
+            app:tabIndicatorHeight="3dp"
+            app:tabSelectedTextColor="#333333"
+            app:tabTextColor="#999999"
+            app:tabTextAppearance="@style/CustomTabText"
+            app:tabMode="fixed"
+            app:tabGravity="center" />
+
+        <!-- 扫描图标 -->
+        <ImageButton
+            android:id="@+id/btn_scan"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@android:drawable/ic_menu_search"
+            android:contentDescription="扫描"
+            android:padding="8dp" />
+    </LinearLayout>
+
+    <!-- ViewPager2 -->
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

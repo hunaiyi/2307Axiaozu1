@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="BottomNavigationViewStyle" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="itemIconSize">24dp</item>
+        <item name="itemTextAppearanceActive">@style/BottomNavItemTextStyle</item>
+        <item name="itemTextAppearanceInactive">@style/BottomNavItemTextStyle</item>
+    </style>
+    
+    <style name="BottomNavItemTextStyle">
+        <item name="android:textSize">12sp</item>
+    </style>
+    
+    <style name="CustomTabText" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+</resources>
