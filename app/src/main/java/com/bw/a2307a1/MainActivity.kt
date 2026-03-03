@@ -1,8 +1,11 @@
 package com.bw.a2307a1
 
+import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -18,6 +21,7 @@ class MainActivity : AppCompatActivity() {
     private val goodsFragment = GoodsFragment()
     private val messageFragment = MessageFragment()
     private val mineFragment = MineFragment()
+    private lateinit var teenModeDialog: Dialog
     
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,6 +30,40 @@ class MainActivity : AppCompatActivity() {
         
         // 设置底部导航栏
         setupBottomNavigation()
+        
+        // 检查是否需要显示青少年模式提示
+        if (!PreferenceManager.isTeenModeShown(this)) {
+            showTeenModeDialog()
+        }
+    }
+    
+    // 显示青少年模式提示对话框
+    private fun showTeenModeDialog() {
+        teenModeDialog = Dialog(this, R.style.DialogTeenMode)
+        teenModeDialog.setContentView(R.layout.dialog_teen_mode)
+        teenModeDialog.setCancelable(false)
+        teenModeDialog.setCanceledOnTouchOutside(false)
+        
+        val btnIKnow = teenModeDialog.findViewById<Button>(R.id.btn_i_know)
+        val tvSetTeenMode = teenModeDialog.findViewById<TextView>(R.id.tv_set_teen_mode)
+        
+        // 我知道了按钮点击事件
+        btnIKnow.setOnClickListener {
+            // 保存已显示状态
+            PreferenceManager.setTeenModeShown(this, true)
+            teenModeDialog.dismiss()
+        }
+        
+        // 设置青少年模式文字点击事件
+        tvSetTeenMode.setOnClickListener {
+            // 跳转到青少年模式设置页面
+            val intent = Intent(this@MainActivity, TeenModeSettingActivity::class.java)
+            startActivity(intent)
+            PreferenceManager.setTeenModeShown(this, true)
+            teenModeDialog.dismiss()
+        }
+        
+        teenModeDialog.show()
     }
     
     private fun setupBottomNavigation() {
@@ -69,5 +107,12 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragment_container, fragment)
             .commit()
+    }
+    
+    override fun onDestroy() {
+        super.onDestroy()
+        if (::teenModeDialog.isInitialized && teenModeDialog.isShowing) {
+            teenModeDialog.dismiss()
+        }
     }
 }
