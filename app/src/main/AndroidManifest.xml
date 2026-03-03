@@ -21,6 +21,10 @@
             android:name=".PublishActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+        <!-- 隐私政策详情 Activity -->
+        <activity
+            android:name=".PrivacyDetailActivity"
+            android:exported="false" />
         <activity
             android:name=".WelcomeActivity"
             android:exported="true">

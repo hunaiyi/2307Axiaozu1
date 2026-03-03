@@ -51,6 +51,81 @@
             android:padding="8dp" />
     </LinearLayout>
 
+    <!-- 搜索框区域 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:background="#FFFFFF"
+        android:gravity="center_vertical">
+
+        <!-- 搜索框 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:background="@drawable/bg_search_box"
+            android:gravity="center_vertical"
+            android:paddingStart="12dp"
+            android:paddingEnd="4dp">
+
+            <!-- 搜索图标 -->
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:src="@android:drawable/ic_menu_search"
+                android:contentDescription="搜索"
+                android:layout_marginEnd="8dp"
+                android:alpha="0.6" />
+
+            <!-- 搜索输入框 -->
+            <EditText
+                android:id="@+id/et_search"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:hint="搜索直播间、商品、短视频"
+                android:textSize="15sp"
+                android:textColor="#333333"
+                android:textColorHint="#999999"
+                android:maxLines="1"
+                android:inputType="text"
+                android:paddingEnd="8dp" />
+
+            <!-- 搜索按钮 -->
+            <Button
+                android:id="@+id/btn_search"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:text="搜索"
+                android:textSize="15sp"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/bg_search_button"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:minWidth="64dp"
+                android:layout_marginEnd="4dp" />
+        </LinearLayout>
+
+        <!-- 购物车图标 -->
+        <ImageButton
+            android:id="@+id/btn_cart"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="12dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@android:drawable/ic_menu_gallery"
+            android:contentDescription="购物车"
+            android:padding="10dp"
+            android:scaleType="fitCenter" />
+    </LinearLayout>
+
     <!-- ViewPager2 -->
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/view_pager"
